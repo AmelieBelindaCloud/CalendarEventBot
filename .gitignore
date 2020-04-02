@@ -105,4 +105,4 @@ dist
 
 # Custom
 idea.txt
-config/
+config/*
