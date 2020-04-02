@@ -2,7 +2,7 @@
   "name": "calendareventbot",
   "version": "0.0.1",
   "description": "A calendar bot for discord to plan events with friends or other groups.",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
