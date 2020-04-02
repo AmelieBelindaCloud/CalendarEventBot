@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/AmelieBelindaCloud/CalendarEventBot#readme",
   "dependencies": {
-    "discord.js": "^12.1.1"
+    "discord.js": "^12.1.1",
+    "googleapis": "^48.0.0"
   }
 }
