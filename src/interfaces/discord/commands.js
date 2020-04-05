@@ -1,5 +1,4 @@
 var me = (message) => {
-    
     message.channel.send(`${message.author.username} stinks!`)
 }
 

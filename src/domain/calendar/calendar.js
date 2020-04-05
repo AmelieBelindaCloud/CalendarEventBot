@@ -1,9 +1,9 @@
-export default function calendarFactory ({ /*Dependencies*/ }) {
+export default function calendarFactory ({ url }) {
     return function create ({
-        events
+        url,
+        id = id.makeId(),
+        events = []
     } = {}) {
-
-        let id = 1
 
         return Object.freeze({
             getId: () => id,

@@ -1,4 +1,4 @@
-const { token } = require('../../config/config.json')
+const { token } = require('./config.json')
 const CommandListener = require('./command-listener')
 
 const Discord = require('discord.js')

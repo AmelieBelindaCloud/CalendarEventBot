@@ -1,9 +1,12 @@
-const {warn} = require('../../utils/logger');
-const {google} = require('googleapis');
+const { calendar } = require('./calendar')
 
-const version =  getVersion();
+const { warn } = require('../../utils/logger')
+const { calendar_id } = require('./config.json')
 
-// login to my calendar
+//const { temp } = require('./temp')
+
+
+// add event to calendar
 
 
 
@@ -14,14 +17,7 @@ const version =  getVersion();
 // access foreign calendar
 
 
+module.exports = Object.freeze( 
+    calendar
+)
 
-
-function getVersion() {
-    let version = 'v1';
-
-    let calendarVersions = google.getSupportedAPIs().calendar;
-    let newest = calendarVersions[calendarVersions.length - 1];
-    if (version != newest) { warn(`Used calendar version ${version} is outdated. Newest version is ${newest}.`); }
-
-    return version;
-}

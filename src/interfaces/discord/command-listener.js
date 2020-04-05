@@ -1,4 +1,4 @@
-const { prefix } = require('../../config/config.json')
+const { prefix } = require('./config.json')
 const Commands = require('./commands')
 
 let listen = (client) => {
