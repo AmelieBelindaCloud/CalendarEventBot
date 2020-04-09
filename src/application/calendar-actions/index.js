@@ -1,8 +1,8 @@
-const { gmailAccess } = require('./adapters/calendar-access')
+const { CalendarService } = require('../../adapters/calendar-service')
 
 const InsertEventActionFactory = require('./insert-event')
 
-const InsertEventAction = InsertEventActionFactory.create({ gmailAccess })
+const InsertEventAction = InsertEventActionFactory.create({ CalendarService })
 
 
 module.exports = Object.freeze({

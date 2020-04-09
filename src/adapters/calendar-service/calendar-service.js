@@ -1,14 +1,14 @@
 const InsertEventAction = require('../../application/calendar-actions')
 
 let defaultEventStartTime = new Date()
-defaultEventStartTime.setDate(defaultEventStartTime.getDay() + 7)
+defaultEventStartTime.setDate(defaultEventStartTime.getDay() + 3)
 
 // Create a new event end date instance for temp uses in our calendar.
 let defaultEventEndTime = new Date()
-defaultEventEndTime.setDate(defaultEventEndTime.getDay() + 10)
+defaultEventEndTime.setDate(defaultEventEndTime.getDay() + 5)
 defaultEventEndTime.setMinutes(defaultEventEndTime.getMinutes() + 45)
 
-module.exports = { create: function({ gmailCalendar, calendar_id }) {
+module.exports = { create: function({ calendar, calendar_id }) {
   	return Object.freeze({
 		insertEvent,
 		getEvent: () => {},
@@ -34,7 +34,7 @@ module.exports = { create: function({ gmailCalendar, calendar_id }) {
 		}
 	} = {}) {
 
-		let gmail = gmailCalendar
+		let gmail = calendar
 		let gmailEvent = { 
 			summary,
 			location,
