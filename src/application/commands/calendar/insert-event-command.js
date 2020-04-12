@@ -1,12 +1,11 @@
 const { Event } = require('../../../domain/calendar')
 
-module.exports = { create: ({ CalendarService, ChatService }) => {
-    return (message, args) => {
-        message.channel.send("Create event.")
+module.exports = { create: ({ CalendarService }) => {
+    return (command, output) => {
 
         let event = new Event({
-            title: args[1],
-            organizer: (args[2] || message.author.username) + " User-ID: " + message.author.id
+            title: command.getArguments()[1],
+            organizer: (command.getCommander().getName()) + " User-ID: " + command.getCommander().getId()
         })
 
         CalendarService.insertEvent({
@@ -14,10 +13,13 @@ module.exports = { create: ({ CalendarService, ChatService }) => {
             description: event.getOrganizer()
         })
         .then((response) => {
-            console.log(response)
+            if(!response) {
+                return
+            }
+            output.info(response)
         })
         .catch((error) => {
-            console.error(error);
+            output.error(error);
         });
     }
 }}
