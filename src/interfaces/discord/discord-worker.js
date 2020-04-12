@@ -1,14 +1,13 @@
-module.exports = { create: ({ ChatClient, token }) => {
+module.exports = { create: ({ DiscordClient, token }) => {
     return class Worker {
         constructor() {}
 
         work() {
-            ChatClient.login(token)
+            DiscordClient.login(token)
             
-            ChatClient.once('ready', () => {
+            DiscordClient.once('ready', () => {
                 console.log('Ready')
             })
-            
         }
     }
 }}

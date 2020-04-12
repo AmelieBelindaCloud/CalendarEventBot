@@ -1,5 +1,5 @@
 module.exports = { create: ({  }) => {
-    return (message, args) => {
-        message.channel.send("This should help.")
+    return (command, output) => {
+        output.info("This should help.")
     }
 }}

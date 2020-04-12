@@ -1,6 +1,6 @@
 const { Event } = require('../../../domain/calendar')
 
-module.exports = { create: ({ CalendarService }) => {
+module.exports = { create: ({ CalendarService, ChatService }) => {
     return (message, args) => {
         message.channel.send("Create event.")
 

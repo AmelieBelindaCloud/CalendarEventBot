@@ -1,14 +1,12 @@
 const Discord = require('discord.js')
-const { token, prefix } = require('./config.json')
-const CommandListenerFactory = require('./command-listener')
+const { token } = require('./config.json')
 const DiscordWorkerFactory = require('./discord-worker')
 
-const client = new Discord.Client();
+const DiscordClient = new Discord.Client();
 
-const CommandListener = CommandListenerFactory.create({ ChatClient: client, prefix })
-const temp = new CommandListener()
-const DiscordWorker = DiscordWorkerFactory.create({ ChatClient: client, token })
+const DiscordWorker = DiscordWorkerFactory.create({ DiscordClient, token })
 
 module.exports = Object.freeze({
-    DiscordWorker
+    DiscordWorker,
+    DiscordClient
 })
